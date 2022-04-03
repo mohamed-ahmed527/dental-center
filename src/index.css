@@ -1,0 +1,513 @@
+@import 'remixicon/fonts/remixicon.css';
+/**tailwind import**/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/***slike slider *****/
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+/****/
+html{
+  overflow-x: hidden;
+}
+:root{
+  --light-blue1:#7395F7 ;
+  --light-blue2:#4F7BF6;
+  --light-gray1:#C8D2F1;
+  --light-gray2:#EDF4FE;
+  --dark-blue1:#3C4661 ;
+}
+*{
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none;
+}
+body {
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+  font-family:system-ui ;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+body::before , body::after{
+  position: absolute;
+  content: '';
+  background-image: url(assets/Path71.png);
+  width: 110px;
+  height: 110px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.4;
+  z-index: -1;
+}
+body::before{
+  bottom: 25%;
+  left: 10%;
+  transform: rotate(-20deg);
+}
+body::after{
+  transform: rotate(20deg);
+  bottom: 60%;
+  right: 10%;
+}
+/*****container*****/
+.container{
+  width: 80%;
+  margin: auto;
+}
+@media screen and (max-width:768px) {
+  .container{
+    width: 90%;
+  }  
+}
+/*******navbar********/
+nav{
+  position: relative;
+  background-color: var(--light-blue2);
+  z-index: 100;
+}
+nav .container{
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+nav .container .logo{
+  display: flex;
+  align-items:center;
+} 
+nav .container .list{
+  display: flex;
+  align-items: center;
+}
+nav .container .list .nav-links {
+  display: flex;
+}
+nav .container .list li a.notactive{
+  display: block;
+  color: white;
+  font-size: 18px;
+}
+nav .container .list li a.active{
+  font-weight: 600;
+  color: var(--light-blue2);
+  background-color: white;
+}
+nav .container .list .nav-links li a{
+  padding: 20px;
+}
+/***********extra*************/
+nav .container .extra {
+  display: flex;
+  align-items:center ;
+}
+nav .container .extra .extra-links{
+  display: flex;
+  justify-items: space-between;
+}
+nav .extra ul li a{
+  padding:7px 15px;
+  display: block;
+  margin: 10px 0px ;
+}
+nav .extra ul li:first-of-type a{
+  color:#C8D2F1 ;
+}
+nav .extra ul li:last-of-type a{
+  display: inline-block;
+  color:white;
+  background-color: var(--light-blue1);
+  border-radius: 7px;
+}
+/*menu btn*/
+.mobile-menu-icon{
+  display: none ;
+}
+/***navbar responsive***/
+@media screen and (max-width:1024px) {
+  nav .container{
+    display: block;
+    padding: 15px 0px;
+  }
+  nav .logo{
+    margin: 0px auto;
+  }
+  nav .container .list{
+    display: block;
+  }
+  nav .container .list .nav-links{
+    display: none;
+  }
+  nav .container .list .nav-links-mobile{
+    display: block;
+    margin: 20px 0px;
+  }
+  nav .container .list .nav-links-mobile li a{
+    padding: 13px 0px;
+    padding-left: 5px ;
+    border-radius: 3px;
+  }
+  /************extra*******/
+  nav .container .extra{
+    display: block;
+  }
+  nav .container .extra .extra-links{
+    display: none;
+  }
+  nav .container .extra .extra-links-mobile{
+    display: block;
+    margin-top: 10px;
+  }
+  nav .container .extra ul li:first-of-type a{
+    padding: 0px;
+  }
+  /*menu btn*/
+  .mobile-menu-icon{
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 10%;
+    color:white ;
+  }
+}
+/***footer***/
+footer{
+  background-color: #4F7BF6;
+  padding: 10px 0px ;
+  color: white;
+}
+/******Home and custom-header****/
+.home , .aboutcomp , .frequentlycomp , .doctorscomp{
+  overflow-x: hidden;
+}
+.custom-header{
+  background-color: var(--light-blue2);
+  position: relative;
+}
+.custom-header::before , .custom-header::after{
+  position: absolute;
+  content: '';
+  background-image: url(assets/teeth.png);
+  width: 160px;
+  height: 160px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.1;
+}
+.custom-header::before{
+  bottom: 25%;
+  right: -2%;
+  transform: rotate(-20deg);
+}
+.custom-header::after{
+  top: 5%;
+  left: -2%;
+  transform: rotate(20deg);
+}
+.home .maintext{
+  padding: 250px 0px;
+  border-bottom-left-radius:150px ;
+  border-bottom-right-radius:150px ;
+}
+/****************/
+.home .btns button:last-of-type{
+  background-color: var(--light-blue1);
+}
+.home .sections{
+  position: relative;
+  margin: auto;
+  bottom: 150px;
+}
+.home .sections .box{
+  background-color: var(--light-gray2);
+}
+.home .sections .box .sec-btn{
+  background-color: var(--light-blue2);
+}
+/****maintext circles****/
+.home .maintext .container{
+  position: relative;
+}
+.home .maintext .container .circle{
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0px 0px 3px #ddd;
+}
+.home .maintext .container .circle:nth-of-type(1){
+  width: 50px;
+  height: 50px;
+  top: calc(50% - 75px);
+  left: calc(50% - 25px);
+  opacity: 0.6;
+}
+.home .maintext .container .circle:nth-of-type(2){
+  width: 100px;
+  height: 100px;
+  top: calc(50% - 100px);
+  left: calc(50% - 50px);
+  opacity: 0.5;
+}
+.home .maintext .container .circle:nth-of-type(3){
+  width: 150px;
+  height: 150px;
+  top: calc(50% - 125px);
+  left: calc(50% - 75px);
+  opacity: 0.4;
+}
+.home .maintext .container .circle:nth-of-type(4){
+  width: 200px;
+  height: 200px;
+  top: calc(50% - 150px);
+  left: calc(50% - 100px);
+  opacity: 0.3;
+}
+/****end maintext circles****/
+/****  provide section  ****/
+.providesec .maintitle , .providesec .allprovides > center{
+  color: var(--light-blue2);
+}
+.providesec .allprovides .parent .box .pic{
+  background-color: var(--light-blue2);
+}
+.providesec .allprovides .parent .box{
+  position: relative;
+}
+.providesec .allprovides .parent .box .pic{
+  position: absolute;
+  right: calc(50% - 40px);
+  top: calc(-35%);
+}
+.providesec .allprovides .parent .box .text{
+  background-color: var(--light-gray2);
+  text-align: center;
+}
+.providesec .allprovides .parent .box .text h1{
+  color: var(--dark-blue1);
+  font-weight: 600;
+}
+/*********whychoose********/
+.whychoose .text > h1{
+  color: var(--light-blue2);
+  font-weight: 800;
+}
+.whychoose .text > p{
+  color: var(--dark-blue1);
+  font-weight: 600;
+}
+/*******home => homeform section*****/
+.homeform .layer{
+  background-image: url(./assets/mini-form-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; 
+}
+/*********patient profile*******/
+.patient-profile table td , .patient-profile table th{
+  text-align: center;
+  padding: 14px 0px;
+}
+.patient-profile table th{
+  font-weight: 500;
+  color: var(--light-blue2);
+}
+.patient-profile table tr td:last-of-type{
+  padding-right: 15px;
+}
+.patient-profile table tr:nth-child(even){
+  background-color: var(--light-gray2);
+}
+/**********doc-dashboard-appointments side-nav*******/
+.doc-dashboard-appointments .inside-box{
+  display: flex;
+}
+.doc-dashboard-appointments .inside-box .side-nav{
+  width: 15%;
+  padding: 15px 0px;
+  background-color: var(--light-blue2);
+  color: white;
+  border-radius: 17px;
+  text-align: center;
+  height: 100vh;
+  margin-bottom: 30px;
+  margin-left: 10px;
+}
+.doc-dashboard-appointments .inside-box .logo{
+  margin: 10px auto 50px auto;
+}
+.doc-dashboard-appointments .inside-box .doc-info .doc-pic{
+  max-width: 130px;
+  margin: 15px auto auto auto;
+  border: 3px solid var(--light-gray2);
+}
+.doc-dashboard-appointments .inside-box .appointments{
+  padding: 10px 0px ;
+  border-bottom-left-radius:10px ;
+  border-top-left-radius:10px ;
+  background-color: white;
+  color: var(--light-blue2);
+  margin-left: 15px;
+}
+.doc-dashboard-appointments .mobile-top-nav{
+  display: none;
+}
+/**********start doc-dashboard-appointments content****/
+/*appointments table style*/
+.doc-dashboard-appointments .inside-box .content table td ,
+.doc-dashboard-appointments .content table th{
+  text-align: left;
+  padding: 14px 0px;
+}
+.doc-dashboard-appointments .inside-box .content table td:first-of-type ,
+.doc-dashboard-appointments .content table th {
+  padding-left: 4px;
+}
+.doc-dashboard-appointments .inside-box .content table th{
+  font-weight: 500;
+  color: var(--light-blue2);
+}
+.doc-dashboard-appointments .inside-box .content table tr:nth-child(even){
+  background-color: var(--light-gray2);
+}
+/*******end doc-dashboard-appointments content*******/
+/*******DOC-dashboard-appointments responsive*******/
+@media screen and (max-width:1024px) {
+  .doc-dashboard-appointments .mobile-top-nav{
+    display: flex;
+    background-color: var(--light-blue2);
+  }
+  .doc-dashboard-appointments .inside-box{
+    display: block;
+  }
+  .doc-dashboard-appointments .inside-box .side-nav{
+    display: none;
+  }
+  .doc-dashboard-appointments .inside-box .side-nav-mobile{
+    width: 100%;
+    padding: 15px 0px;
+    background-color: var(--light-blue2);
+    color: white;
+    border-radius: 0px;
+    text-align: center;
+    height: max-content;
+  }
+  .doc-dashboard-appointments .inside-box .side-nav-mobile .logo{
+    display: none;
+  }
+  .doc-dashboard-appointments .inside-box .appointments{
+    background-color: white;
+    color: var(--light-blue2);
+  }    
+}
+/*******END Doc-dashboard-appointments responsive*******/
+/*********Admin Dachboard******/
+.admin-dachboard .inside-box{
+  display: flex;
+}
+.admin-dachboard .inside-box .side-nav{
+  width: 15%;
+  padding: 15px 0px;
+  background-color: var(--light-blue2);
+  color: white;
+  border-radius: 17px;
+  text-align: center;
+  height: 100vh;
+  margin-bottom: 30px;
+  margin-left: 10px;
+}
+.admin-dachboard .inside-box .side-nav >span , .admin-dachboard .inside-box .side-nav-mobile >span {
+  display: block;
+  margin: 15px 0px;
+  padding: 10px 0px ;
+  cursor: pointer;
+  margin-left: 15px;
+}
+.admin-dachboard .inside-box span.notactive{
+  background-color: none;
+  color: white;
+}
+.admin-dachboard .inside-box span.active{
+  border-bottom-left-radius:10px ;
+  border-top-left-radius:10px ;
+  background-color: white;
+  color: var(--light-blue2);
+}
+.admin-dachboard .inside-box .logo{
+  margin: 10px auto 50px auto;
+}
+.admin-dachboard .inside-box .admin-info .admin-pic{
+  max-width: 130px;
+  margin: 15px auto auto auto;
+  border: 3px solid var(--light-gray2);
+}
+.admin-dachboard .mobile-top-nav{
+  display: none;
+}
+/***admin-dachboard responsive***/
+@media screen and (max-width:1024px){
+  .admin-dachboard .inside-box{
+    display: block;
+  }
+  .admin-dachboard .mobile-top-nav{
+    display: flex;
+    background-color: var(--light-blue2);
+  }
+  .admin-dachboard .inside-box .side-nav{
+    display: none;
+  }
+  .admin-dachboard .inside-box .side-nav-mobile{
+    width: 100%;
+    padding: 15px 0px;
+    height: max-content;
+    background-color: var(--light-blue2);
+  }
+  .admin-dachboard .inside-box .side-nav-mobile .logo{
+    display: none;
+  }
+  .admin-dachboard .inside-box .side-nav >span , .admin-dachboard .inside-box .side-nav-mobile >span{
+    text-align: center;
+  }
+}
+/*********Admin Dachboard Appointments******/
+/*********Admin Dachboard Appointments table******/
+.admin-dachboard-appointments table td ,.admin-dachboard-appointments table th {
+  text-align: left;
+  padding: 14px 0px;
+}
+.admin-dachboard-appointments table td:first-of-type ,
+.admin-dachboard-appointments table th {
+  padding-left: 4px;
+}
+.admin-dachboard-appointments table th{
+  font-weight: 500;
+  color: var(--light-blue2);
+}
+.admin-dachboard-appointments table tr:nth-child(even){
+  background-color: var(--light-gray2);
+}
+/*********Admin Dachboard Doctors******/
+/*********Admin Dachboard Doctors table******/
+.admin-dachboard-doctors table td ,.admin-dachboard-doctors table th {
+  text-align: left;
+  padding: 14px 0px;
+}
+.admin-dachboard-doctors table td:first-of-type ,
+.admin-dachboard-doctors table th {
+  padding-left: 4px;
+}
+.admin-dachboard-doctors th{
+  font-weight: 500;
+  color: var(--light-blue2);
+}
+.admin-dachboard-doctors tr:nth-child(even){
+  background-color: var(--light-gray2);
+}
+@media screen and (max-width:1024px){
+  .admin-dachboard-doctors table td ,.admin-dachboard-doctors table th ,
+  .admin-dachboard-appointments table td ,.admin-dachboard-appointments table th,
+  .doc-dashboard-appointments .inside-box .content table td , .doc-dashboard-appointments .content table th
+  {
+    text-align: center;
+  }
+}
